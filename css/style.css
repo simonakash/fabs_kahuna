@@ -1,0 +1,18 @@
+/*----font style-----*/
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=PT+Sans+Narrow:wght@400;700&display=swap');
+
+.font-Kantumruy-pro{
+    font-family: 'Kantumruy Pro', sans-serif;
+}
+.font-pt-sans-narrow{
+    font-family: 'PT Sans Narrow', sans-serif;
+    line-height: 51px !important;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+

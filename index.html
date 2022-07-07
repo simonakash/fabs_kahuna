@@ -1,37 +1,49 @@
 <!doctype html>
 <html class=" overflow-x-hidden" lang="bn">
-    <!--====================head====================-->
-    <head>
-        <meta name="description" content="Ludwig Royal Home">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="theme-color" content="#4285f4">
-        <meta property="og:image" content="images/logo/LUDWIG_ROYAL_Logo_schwarz.svg">
-        <meta property="og:image:type" content="image/jpg">
-        <meta property="og:image:width" content="1024">
-        <meta property="og:image:height" content="729">
+<!--====================head====================-->
 
-        <link rel="shortcut icon" href="images/logo/LUDWIG_ROYAL_Logo_schwarz.svg" type="image/x-icon">
-        <link rel="icon" href="images/logo/LUDWIG_ROYAL_Logo_schwarz.svg" type="image/x-icon">
-        <!--------->
-        <title>Ludwig Royal Home</title>
+<head>
+    <meta name="description" content="Ludwig Royal Home">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4285f4">
+    <meta property="og:image" content="images/logo/LUDWIG_ROYAL_Logo_schwarz.svg">
+    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="729">
 
-        <!----Tailwind CSS----->
-        <link rel="stylesheet" href="output/tailwind.css">
+    <link rel="shortcut icon" href="images/logo/LUDWIG_ROYAL_Logo_schwarz.svg" type="image/x-icon">
+    <link rel="icon" href="images/logo/LUDWIG_ROYAL_Logo_schwarz.svg" type="image/x-icon">
+    <!--------->
+    <title>Ludwig Royal Home</title>
 
-    </head>
-    <!--====================body====================-->
-    <body class=" overflow-x-hidden">
-        <!-- ==========header========== -->
-       <header class="pt-16 bg-stone-150">
-            <!--========-->
-            <div class=" container mx-auto px-5 xl:px-0 flex items-center justify-between font-pt-sans-narrow gap-10 relative">
-                <!--====left====-->
-                <div>
+    <!-----Swiper Js css---->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <!----Tailwind CSS----->
+    <link rel="stylesheet" href="output/tailwind.css">
+
+    <style>
+        .swiper-button-disabled{
+            opacity: 0.1 !important;
+        }
+    </style>
+</head>
+<!--====================body====================-->
+
+<body class=" overflow-x-hidden relative">
+    <!-- ==========header========== -->
+    <header class="pt-16 bg-stone-150">
+        <!--========-->
+        <div
+            class="container max-w-7xl sm:px-10 mx-auto px-5 xl:px-0 flex items-center justify-between font-pt-sans-narrow gap-10 relative">
+            <!--====left====-->
+            <div @click.away="humberger=false" x-data="{humberger: false}">
+                <!--========-->
+                <a @click.prevent="humberger=!humberger" aria-label="Mobile Menu button" href="#">
                     <!--========-->
-                    <a href="#">
+                    <div>
                         <!--========-->
-                        <svg xmlns="http://www.w3.org/2000/svg" class=" h-auto md:w-12 w-8" viewBox="0 0 52 19.5">
+                        <svg x-show="humberger===false" xmlns="http://www.w3.org/2000/svg" class=" h-12 md:w-12 w-8" viewBox="0 0 52 19.5">
                             <g id="Group_1416" data-name="Group 1416" transform="translate(-176 -176)">
                                 <g id="Group_1415" data-name="Group 1415" transform="translate(10 22)">
                                     <line id="Line_75" data-name="Line 75" x2="49" transform="translate(167.5 155.5)" fill="none" stroke="#000"
@@ -42,539 +54,683 @@
                             </g>
                         </svg>
                         <!--========-->
-                        <p class=" xl:text-2xl text-lg leading-none text-center mt-1">Menü</p>
-                    </a>
-                </div>
-                <!--====center====-->
-                <div>
-                    <!--========-->
-                    <img height="100%" width="100%" class=" h-full w-full object-cover object-center" src="images/logo/LUDWIG_ROYAL_Logo.png" alt="//">
-                </div>
-                <!--====right====-->
-                <div>
-                    <!--========-->
-                   <button class="outline-none text-white md:p-4 md:px-5 p-3 tracking-wider bg-stone-550 hover:bg-transparent border-2 border-stone-550 hover:border-stone-550 hover:text-black duration-200 xl:text-3xl md:text-2xl sm:text-xl text-base">Buchen</button>
-                </div>
-                <!--====DE button====-->
-                <div class=" absolute -top-10 2xl:-left-20 left-5">
-                    <!--====DE button====-->
-                    <a class=" flex items-center space-x-2 text-xl text-black" href="#">
-                        <!--====span====-->
-                        <span>DE</span>
-                        <!--========-->
-                        <svg xmlns="http://www.w3.org/2000/svg" class=" h-auto w-3" viewBox="0 0 13.994 16.77">
-                            <path id="Path_14" data-name="Path 14" d="M16.166,11.773l-5.583,5.583m0,0L5,11.773m5.583,5.583V3"
-                                transform="translate(-3.586 -2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" />
+                        <svg x-show="humberger===true" xmlns="http://www.w3.org/2000/svg" class=" h-12 md:w-12 w-8 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="1">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                         </svg>
-                    </a>
-                </div>
-            </div>
-       </header>
-        <!--====================main====================-->
-        <main>
-            <!-- ==========section 001========== -->
-            <section class="bg-stone-150">
-                <!--========-->
-                <div class=" container mx-auto px-5 xl:px-0 xl:py-40 py-20 relative text-center">
+                    </div>
+                    
                     <!--========-->
-                    <h1 class="font-Kantumruy-pro xl:text-5xl text-4xl my-4 leading-[67px!important]">Servus und hereinspaziert<br class=" hidden md:block">
-                    ins Allgäu-Hotel Ludwig Royal</h1>
-                    <!--========-->
-                    <p class=" text-xl xl:text-2xl">Mehr Genuss, Action, Wellness oder Romantik</p>
-                    <!--========-->
-                    <a class="inline-block text-center xl:text-2xl text-xl mt-20 group" href="#">
-                        <!--========-->
-                        <p>Impressionen</p>
-                        <!--========-->
-                        <div class=" h-0.5 w-32 bg-black mx-auto block mt-1 group-hover:bg-stone-450"></div>
-                    </a>
-                </div>
-                <!--========-->
-                <div class=" relative">
-                    <!--========-->
-                    <div class="z-10 flex">
-                        <!--========-->
-                        <div class="absolute -top-1 bg-stone-150 xl:p-16 p-10 flex flex-col gap-20">
+                    <p class=" xl:text-2xl text-lg leading-none text-center -mt-2">Menü</p>
+                </a>
+                <!--====Mobile menu====-->
+                <div :class="{'translate-x-0' : humberger, 'translate-x-full': !humberger  }"
+                    class="fixed w-3/5 md:w-1/3 transform transition-transform duration-700 ease-in-out z-50 bg-stone-150 right-0 top-0 bottom-0 shadow-2xl">
+                    <!--====menu====-->
+                    <div class=" p-10">
+                        <!--====logo====-->
+                        <div class=" my-4">
+                            <!--====logo====-->
                             <!--========-->
-                            <a href="#">
-                                <!--========-->
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-auto w-12" viewBox="0 0 46.811 46.811">
-                                    <path id="Path_11" data-name="Path 11"
-                                        d="M35.5,3H48m0,0V15.5M48,3,33,18M8,3A5,5,0,0,0,3,8v2.5A37.579,37.579,0,0,0,18.49,40.864,37.122,37.122,0,0,0,40.5,48H43a5,5,0,0,0,5-5V34.8a2.5,2.5,0,0,0-1.71-2.37L35.057,28.685a2.5,2.5,0,0,0-3.025,1.255l-2.825,5.643A27.605,27.605,0,0,1,15.417,21.79l5.643-2.82a2.5,2.5,0,0,0,1.255-3.025L18.57,4.708A2.5,2.5,0,0,0,16.2,3Z"
-                                        transform="translate(-2.25 -1.939)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="1.5" />
-                                </svg>
-                                <!--========-->
-                                <p class=" text-xl">Anruf</p>
-                            </a>
-                            <!--========-->
-                            <a href="#">
-                                <!--========-->
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-auto w-12" viewBox="0 0 47.08 36.5">
-                                    <path id="Path_12" data-name="Path 12"
-                                        d="M3,12.5,22.725,25.65a5,5,0,0,0,5.55,0L48,12.5M8,40H43a5,5,0,0,0,5-5V10a5,5,0,0,0-5-5H8a5,5,0,0,0-5,5V35A5,5,0,0,0,8,40Z"
-                                        transform="translate(-1.96 -4.25)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="1.5" />
-                                </svg>
-                                <!--========-->
-                                <p class=" text-xl">E-Mail</p>
+                            <a href="/">
+                                <img height="100%" width="100%" class="md:w-1/2 w-4/5 mx-auto "
+                                    src="images/logo/LUDWIG_ROYAL_Logo.png" alt="//">
                             </a>
                         </div>
                         <!--========-->
-                        <img class=" h-full w-full min-h-726 object-cover" src="images/home/1.jpg" alt="//">
-                        <!--========-->
-                        <div class=" h-full px-32 bg-red-500 "></div>
-                       
-                    </div>
-                    <!--========-->
-                    <div class="relative container mx-auto px-5 xl:px-0">
-                        <!--========-->
-                        <div class="px-8 py-3 backdrop-brightness-150 backdrop-blur-[50px] absolute left-0 right-0 bottom-0 grid sm:grid-cols-2 grid-cols-1 sm:gap-16 gap-5 font-pt-sans-narrow">
+                        <nav class="space-y-4 flex flex-col text-center md:text-2xl text-xl text-black mt-16">
                             <!--========-->
-                            <div class="flex divide-x divide-black">
+                            <a class="hover:underline" href="#">KARRIERE</a>
+                            <!--========-->
+                            <a class="hover:underline" href="#">PRESSE</a>
+                            <!--========-->
+                            <a class="hover:underline" href="#">AGB</a>
+                            <!--========-->
+                            <a class="hover:underline" href="#">DATENSCHUTZ</a>
+                            <!--========-->
+                            <a class="hover:underline" href="#">IMPRESSUM</a>
+                            <!--========-->
+                            <a class="hover:underline" href="#">ANFAHRT</a>
+                            <!--========-->
+                            <a class="hover:underline" href="#">FOLGEN SIE UN</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!--====center====-->
+            <div>
+                <!--========-->
+                <a href="/">
+                    <img height="100%" width="100%" class="mb-5 h-full w-full object-cover object-center"
+                        src="images/logo/LUDWIG_ROYAL_Logo.png" alt="//">
+                </a>
+            </div>
+            <!--====right====-->
+            <div>
+                <!--========-->
+                <button
+                    class="outline-none text-white md:p-4 md:px-5 p-3 tracking-wider bg-stone-550 hover:bg-transparent border-2 border-stone-550 hover:border-stone-550 hover:text-black duration-200 xl:text-3xl md:text-2xl sm:text-xl text-base">Buchen</button>
+            </div>
+            <!--====DE button====-->
+            <div class=" absolute -top-10 2xl:-left-20 xl:left-0 sm:left-10 left-4">
+                <!--====DE button====-->
+                <a class=" flex items-center space-x-2 text-xl text-black" href="#">
+                    <!--====span====-->
+                    <span>DE</span>
+                    <!--========-->
+                    <svg xmlns="http://www.w3.org/2000/svg" class=" h-auto w-3" viewBox="0 0 13.994 16.77">
+                        <path id="Path_14" data-name="Path 14"
+                            d="M16.166,11.773l-5.583,5.583m0,0L5,11.773m5.583,5.583V3" transform="translate(-3.586 -2)"
+                            fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!--====================main====================-->
+    <main>
+        <!-- ==========section 001========== -->
+        <section class="bg-stone-150">
+            <!--========-->
+            <div class="container max-w-7xl sm:px-10 mx-auto px-5 xl:px-0 py-20 relative text-center">
+                <!--========-->
+                <h1 class="font-Kantumruy-pro xl:text-5xl text-4xl my-4 leading-[67px!important]">Servus und
+                    hereinspaziert<br class=" hidden md:block">
+                    ins Allgäu-Hotel Ludwig Royal</h1>
+                <!--========-->
+                <p class=" text-xl xl:text-2xl">Mehr Genuss, Action, Wellness oder Romantik</p>
+                <!--========-->
+                <a class="inline-block text-center xl:text-2xl text-xl mt-20 group" href="#">
+                    <!--========-->
+                    <p>Impressionen</p>
+                    <!--========-->
+                    <div class=" h-0.5 w-32 bg-black mx-auto block mt-1 group-hover:bg-stone-450"></div>
+                </a>
+                <!--========-->
+                <div class="bg-stone-150 -mt-1 absolute top-full z-20 p-12 2xl:-left-36 left-0 flex flex-col md:justify-center justify-start gap-20">
+                    <!--========-->
+                    <a class="hover:underline" href="#">
+                        <!--========-->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-auto xl:w-12 w-8 mx-auto mb-3" viewBox="0 0 46.811 46.811">
+                            <path id="Path_11" data-name="Path 11"
+                                d="M35.5,3H48m0,0V15.5M48,3,33,18M8,3A5,5,0,0,0,3,8v2.5A37.579,37.579,0,0,0,18.49,40.864,37.122,37.122,0,0,0,40.5,48H43a5,5,0,0,0,5-5V34.8a2.5,2.5,0,0,0-1.71-2.37L35.057,28.685a2.5,2.5,0,0,0-3.025,1.255l-2.825,5.643A27.605,27.605,0,0,1,15.417,21.79l5.643-2.82a2.5,2.5,0,0,0,1.255-3.025L18.57,4.708A2.5,2.5,0,0,0,16.2,3Z"
+                                transform="translate(-2.25 -1.939)" fill="none" stroke="#000" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="1.5" />
+                        </svg>
+                        <!--========-->
+                        <p class=" xl:text-xl text-base">Anruf</p>
+                    </a>
+                    <!--========-->
+                    <a class="hover:underline" href="#">
+                        <!--========-->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-auto xl:w-12 w-8 mx-auto mb-3" viewBox="0 0 47.08 36.5">
+                            <path id="Path_12" data-name="Path 12"
+                                d="M3,12.5,22.725,25.65a5,5,0,0,0,5.55,0L48,12.5M8,40H43a5,5,0,0,0,5-5V10a5,5,0,0,0-5-5H8a5,5,0,0,0-5,5V35A5,5,0,0,0,8,40Z"
+                                transform="translate(-1.96 -4.25)" fill="none" stroke="#000" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="1.5" />
+                        </svg>
+                        <!--========-->
+                        <p class=" xl:text-xl text-base">E-Mail</p>
+                    </a>
+                </div>
+            </div>
+            <!--========-->
+            <div class=" relative h-[726px]">
+                <!--========-->
+                <div>
+                    <!--========-->
+                    <img class="absolute h-full w-full min-h-726 object-fill z-10" src="images/home/1.jpg" alt="//">
+                    <!--========-->
+                    <div class="xl:block hidden h-[341px] bg-stone-150 z-10 absolute -top-1 left-0 w-[9.5%] 3xl:w-1/4"> </div>
+                    <!--========-->
+                    <div class="2xl:block hidden bg-stone-150 z-10 absolute top-0 bottom-0 right-0 w-[9.5%] 3xl:w-1/5"> </div>
+                </div>
+                <!--========-->
+                <div class="relative h-full container max-w-7xl sm:px-10 mx-auto px-5 xl:px-0 z-20">
+                    <!--========-->
+                    <div
+                        class="px-8 py-3 backdrop-brightness-150 backdrop-blur-[50px] absolute left-0 right-0 bottom-0 grid sm:grid-cols-2 grid-cols-1 sm:gap-16 gap-5 font-pt-sans-narrow z-30">
+                        <!--========-->
+                        <div class="flex divide-x divide-black">
+                            <!--========-->
+                            <div class="w-full flex items-center space-x-5 ">
                                 <!--========-->
-                                <div class="w-full flex items-center space-x-5 ">
-                                    <!--========-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-auto w-11" viewBox="0 0 42.102 42.102">
-                                        <path id="Path_52" data-name="Path 52"
-                                            d="M14.139,11.912V3m17.823,8.912V3M11.912,20.823H34.19M7.456,43.1h31.19A4.456,4.456,0,0,0,43.1,38.646V11.912a4.456,4.456,0,0,0-4.456-4.456H7.456A4.456,4.456,0,0,0,3,11.912V38.646A4.456,4.456,0,0,0,7.456,43.1Z"
-                                            transform="translate(-2 -2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" />
-                                    </svg>
-                                    <!--========-->
-                                    <div class="text-xl">
-                                        <!--========-->
-                                        <p>Abreise</p>
-                                        <!--========-->
-                                        <p>TT.MM.JJJJ</p>
-                                    </div>
-                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-auto w-11" viewBox="0 0 42.102 42.102">
+                                    <path id="Path_52" data-name="Path 52"
+                                        d="M14.139,11.912V3m17.823,8.912V3M11.912,20.823H34.19M7.456,43.1h31.19A4.456,4.456,0,0,0,43.1,38.646V11.912a4.456,4.456,0,0,0-4.456-4.456H7.456A4.456,4.456,0,0,0,3,11.912V38.646A4.456,4.456,0,0,0,7.456,43.1Z"
+                                        transform="translate(-2 -2)" fill="none" stroke="#000" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" />
+                                </svg>
                                 <!--========-->
-                                <div class="w-full flex items-center justify-between pl-5">
+                                <div class="text-xl">
                                     <!--========-->
-                                    <div class="text-xl">
-                                        <!--========-->
-                                        <p>Anreise</p>
-                                        <!--========-->
-                                        <p>TT.MM.JJJJ</p>
-                                    </div>
+                                    <p>Abreise</p>
                                     <!--========-->
-                                    <button class=" outline-none">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class=" h-auto w-4" viewBox="0 0 16.137 9.483">
-                                            <path id="Path_53" data-name="Path 53" d="M18.309,12.48l-6.654,6.654m0,0L5,12.48m6.654,6.654"
-                                                transform="translate(-3.586 -11.066)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
-                                                stroke-width="2" />
-                                        </svg>
-                                    </button>
+                                    <p>TT.MM.JJJJ</p>
                                 </div>
                             </div>
                             <!--========-->
-                            <div  class=" flex items-center justify-between">
+                            <div class="w-full flex items-center justify-between pl-5">
                                 <!--========-->
-                                <div class=" flex items-center space-x-5 ">
+                                <div class="text-xl">
                                     <!--========-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-auto" viewBox="0 0 29.146 36.903">
-                                        <path id="Path_54" data-name="Path 54"
-                                            d="M26.329,10.756A7.756,7.756,0,1,1,18.573,3a7.756,7.756,0,0,1,7.756,7.756ZM18.573,24.329A13.573,13.573,0,0,0,5,37.9H32.146A13.573,13.573,0,0,0,18.573,24.329Z"
-                                            transform="translate(-4 -2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" />
-                                    </svg>
+                                    <p>Anreise</p>
                                     <!--========-->
-                                    <div class="text-xl">
-                                        <!--========-->
-                                        <p>Gäste & Zimmer</p>
-                                        <!--========-->
-                                        <p>2 Erwachsene</p>
-                                    </div>
+                                    <p>TT.MM.JJJJ</p>
                                 </div>
                                 <!--========-->
                                 <button class=" outline-none">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class=" h-auto w-4" viewBox="0 0 16.137 9.483">
-                                        <path id="Path_53" data-name="Path 53" d="M18.309,12.48l-6.654,6.654m0,0L5,12.48m6.654,6.654"
-                                            transform="translate(-3.586 -11.066)" fill="none" stroke="#000" stroke-linecap="round"
-                                            stroke-linejoin="round" stroke-width="2" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" class=" h-auto w-4"
+                                        viewBox="0 0 16.137 9.483">
+                                        <path id="Path_53" data-name="Path 53"
+                                            d="M18.309,12.48l-6.654,6.654m0,0L5,12.48m6.654,6.654"
+                                            transform="translate(-3.586 -11.066)" fill="none" stroke="#000"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
                                     </svg>
                                 </button>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </section>
-            <!-- ==========section 002========== -->
-            <section>
-                <!--========-->
-                <div class=" container mx-auto px-5 xl:px-0 py-20 relative">
-                    <!--========-->
-                    <div class="xl:w-3/5 md:w-4/5 mx-auto md:space-y-10 space-y-6">
                         <!--========-->
-                        <p class=" xl:text-4xl md:text-3xl text-2xl font-semibold font-pt-sans-narrow md:pb-16">Beste Lage in der Urlaubsregion Oberstaufen-Steibis! Hochgrat, Imberg und die einzigartige Natur des Westallgäus direkt
-                        vor der Haustüre. Zwei fantastische Golfplätze um die Ecke. Großzügige Zimmer und die neue Adults-Only Wellness-Oase
+                        <div class=" flex items-center justify-between">
+                            <!--========-->
+                            <div class=" flex items-center space-x-5 ">
+                                <!--========-->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-auto" viewBox="0 0 29.146 36.903">
+                                    <path id="Path_54" data-name="Path 54"
+                                        d="M26.329,10.756A7.756,7.756,0,1,1,18.573,3a7.756,7.756,0,0,1,7.756,7.756ZM18.573,24.329A13.573,13.573,0,0,0,5,37.9H32.146A13.573,13.573,0,0,0,18.573,24.329Z"
+                                        transform="translate(-4 -2)" fill="none" stroke="#000" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" />
+                                </svg>
+                                <!--========-->
+                                <div class="text-xl">
+                                    <!--========-->
+                                    <p>Gäste & Zimmer</p>
+                                    <!--========-->
+                                    <p>2 Erwachsene</p>
+                                </div>
+                            </div>
+                            <!--========-->
+                            <button class=" outline-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" class=" h-auto w-4" viewBox="0 0 16.137 9.483">
+                                    <path id="Path_53" data-name="Path 53"
+                                        d="M18.309,12.48l-6.654,6.654m0,0L5,12.48m6.654,6.654"
+                                        transform="translate(-3.586 -11.066)" fill="none" stroke="#000"
+                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <!--========-->
+                    <div class="xl:block hidden bg-stone-150 z-10 absolute -top-1 -bottom-1 right-[-319px] w-1/4"> </div>
+                </div>
+            </div>
+        </section>
+        <!-- ==========section 002========== -->
+        <section>
+            <!--========-->
+            <div class=" container max-w-7xl sm:px-10 mx-auto px-5 xl:px-0 py-16 pt-28 relative">
+                <!--========-->
+                <div class="xl:w-3/5 md:w-4/5 mx-auto md:space-y-10 space-y-6">
+                    <!--========-->
+                    <p class=" xl:text-4xl md:text-3xl text-2xl font-semibold font-pt-sans-narrow md:pb-16">Beste Lage
+                        in der Urlaubsregion Oberstaufen-Steibis! Hochgrat, Imberg und die einzigartige Natur des
+                        Westallgäus direkt
+                        vor der Haustüre. Zwei fantastische Golfplätze um die Ecke. Großzügige Zimmer und die neue
+                        Adults-Only Wellness-Oase
                         „Ludwig meets Buddha “. – Das Leading Spa</p>
-                        <!--========-->
-                        <p class=" xl:text-4xl md:text-3xl text-2xl font-pt-sans-narrow">Wellness, Wandern, Golfen, Biken und das Allgäu genießen! Heute ein Ausflug nach Schloss Neuschwanstein, morgen zum
-                        Outletshopping. Sich im neuen Wellnessbereich verwöhnen lassen und beim abwechslungsreichen Abendessen echten Allgäuer
+                    <!--========-->
+                    <p class=" xl:text-4xl md:text-3xl text-2xl font-pt-sans-narrow">Wellness, Wandern, Golfen, Biken
+                        und das Allgäu genießen! Heute ein Ausflug nach Schloss Neuschwanstein, morgen zum
+                        Outletshopping. Sich im neuen Wellnessbereich verwöhnen lassen und beim abwechslungsreichen
+                        Abendessen echten Allgäuer
                         Gaumenschmaus genießen!</p>
-                        <!--========-->
-                        <p class=" xl:text-4xl md:text-3xl text-2xl font-pt-sans-narrow">Eure Auszeit mit besonderen Wohlfühl-Momenten und Abenteuern startet genau hier! Urgemütlich, ohne Schischi und
-                        übertriebenen Glamour. Einzigartig, außergewöhnlich und irgendwie anders. Das ist Urlaub im Ludwig Royal!</p>
-                    </div>
                     <!--========-->
-                    <a class="absolute top-72 my-auto 2xl:-left-32 -left-20" href="#">
-                        <!--========-->
-                        <svg xmlns="http://www.w3.org/2000/svg" class=" text-black h-12 w-12 mb-4 mx-auto" viewBox="0 0 52 59.768">
-                            <g id="Group_1419" data-name="Group 1419" transform="translate(-3 -2)">
-                                <path id="Path_7" data-name="Path 7"
-                                    d="M46.678,45.678,33.419,58.937a6.244,6.244,0,0,1-8.834,0L11.322,45.678a25,25,0,1,1,35.356,0Z"
-                                    transform="translate(0 0)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" />
-                                <path id="Path_8" data-name="Path 8"
-                                    d="M30.136,18.568A10.568,10.568,0,1,1,19.568,8,10.568,10.568,0,0,1,30.136,18.568Z"
-                                    transform="translate(9.432 9.669)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" />
-                            </g>
-                        </svg>
-                        <!--========-->
-                        <p class=" text-xl">Standort<br>anzeigen</p>
-                    </a>
+                    <p class=" xl:text-4xl md:text-3xl text-2xl font-pt-sans-narrow">Eure Auszeit mit besonderen
+                        Wohlfühl-Momenten und Abenteuern startet genau hier! Urgemütlich, ohne Schischi und
+                        übertriebenen Glamour. Einzigartig, außergewöhnlich und irgendwie anders. Das ist Urlaub im
+                        Ludwig Royal!</p>
                 </div>
                 <!--========-->
-                <div class=" container mx-auto px-5 md:px-0 grid lg:grid-cols-2 grid-cols-1 text-black xl:gap-20 md:gap-10 gap-12 font-pt-sans-narrow py-20">
+                <a class="absolute xl:top-0 md:top-10 top-4 bottom-0 my-auto 2xl:-left-32 xl:left-3  flex flex-col md:justify-center justify-start hover:underline" href="#">
                     <!--========-->
-                    <div class="lg:order-1 order-2 font-pt-sans-narrow">
-                        <!--========-->
-                        <div>
-                            <!--========-->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 50.174 29.753">
-                                <path id="Path_175" data-name="Path 175" d="M48.174,0l-14,12.281L24.1.82,14,12.281,0,0V26.547H48.174Z"
-                                    transform="translate(1 2.207)" fill="none" stroke="#bfb8a5" stroke-width="2" />
-                            </svg>
-                            <!--========-->
-                            <h1 class="font-Kantumruy-pro xl:text-5xl text-4xl my-4">Und Action bitte!</h1>
-                            <!--========-->
-                            <p class=" text-2xl xl:text-3xl">Aktivitäten und Erlebnisse im Allgäu</p>
-                        </div>
-                        <!--========-->
-                        <div class=" lg:mt-20 mt-6">
-                            <!--========-->
-                            <p class=" xl:text-4xl md:text-2xl text-xl leading-loose xl:leading-[51px!important] font-light">Die Gipfel stürmen, den Fahrwind spüren oder ein paar Golfbälle versenken. Das Ludwig Royal in Steibis – Oberstaufen
-                            bietet die perfekte Ausgangslage für euren Aktivurlaub und für zahlreiche Ausflüge.
-                            Unzählige Kilometer an Wanderwegen im Naturpark Nagelfluhkette direkt vor der Haustüre. Genusstouren oder actionreiche
-                            Down-Hill Routen fürs Fahrrad oder E-Bike. Zwei Golfplätze mit Bergblick für spektakuläre Drives. Und jede Menge
-                            Ausflugsmöglichkeiten für Kulturfans,</p>
-                            <!--========-->
-                            <p class=" xl:text-4xl md:text-2xl text-xl mt-6">Das Allgäu entdecken</p>
-                        </div>
-                    </div>
-                    <!--========-->
-                    <div class="lg:order-2 order-1">
-                        <img height="100%" width="100%" class=" h-full w-full object-cover object-center" src="images/home/2.jpg"
-                            alt="//">
-                    </div>
-                </div>
-            </section>
-            <!-- ==========section 003========== -->
-            <section>
-                <!--========-->
-                <div class=" container mx-auto px-5 xl:px-0 font-pt-sans-narrow pt-20 flex flex-col items-center text-center">
-                    <!--========-->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 " viewBox="0 0 50.174 29.753">
-                        <path id="Path_175" data-name="Path 175" d="M48.174,0l-14,12.281L24.1.82,14,12.281,0,0V26.547H48.174Z"
-                            transform="translate(1 2.207)" fill="none" stroke="#bfb8a5" stroke-width="2" />
+                    <svg xmlns="http://www.w3.org/2000/svg" class="  text-black h-auto xl:w-12 w-8 mb-3 mx-auto"
+                        viewBox="0 0 52 59.768">
+                        <g id="Group_1419" data-name="Group 1419" transform="translate(-3 -2)">
+                            <path id="Path_7" data-name="Path 7"
+                                d="M46.678,45.678,33.419,58.937a6.244,6.244,0,0,1-8.834,0L11.322,45.678a25,25,0,1,1,35.356,0Z"
+                                transform="translate(0 0)" fill="none" stroke="#000" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" />
+                            <path id="Path_8" data-name="Path 8"
+                                d="M30.136,18.568A10.568,10.568,0,1,1,19.568,8,10.568,10.568,0,0,1,30.136,18.568Z"
+                                transform="translate(9.432 9.669)" fill="none" stroke="#000" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" />
+                        </g>
                     </svg>
                     <!--========-->
-                    <h1 class="font-Kantumruy-pro xl:text-5xl text-4xl my-4">Angebote & Urlaubspakete im Ludwig Royal</h1>
-                    <!--========-->
-                    <p class=" text-2xl xl:text-3xl">Mehr Genuss, Action, Wellness oder Romantik</p>
-                </div>
+                    <p class=" xl:text-xl text-sm">Standort<br>anzeigen</p>
+                </a>
+            </div>
+            <!--========-->
+            <div class=" container max-w-7xl sm:px-10 mx-auto px-5 grid lg:grid-cols-2 grid-cols-1 text-black xl:gap-20 md:gap-10 gap-12 font-pt-sans-narrow pb-16">
                 <!--========-->
-                <div class=" container mx-auto px-5 xl:px-0 font-pt-sans-narrow py-20 flex gap-8 relative ">
+                <div class="lg:order-1 order-2 font-pt-sans-narrow">
                     <!--========-->
-                    <div class="lg:w-2/5 w-1/2 whitespace-nowrap">
+                    <div>
                         <!--========-->
-                        <div>
-                            <img height="100%" width="100%" class=" h-auto w-full" src="images/home/3.jpg" alt="//">
-                        </div>
-                        <!--========-->
-                        <div>
-                            <!--========-->
-                            <h1 class="font-Kantumruy-pro xl:text-5xl text-4xl my-2 mt-4">Zeit zu zweit</h1>
-                            <!--========-->
-                            <div class="flex items-center space-x-4 font-pt-sans-narrow  md:text-4xl text-3xl tracking-wider">
-                                <!--========-->
-                                <a class=" text-stone-450" href="#">Buchen</a>
-                                <span>|</span>
-                                <!--========-->
-                                <a href="#">Mehr Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!--========-->
-                    <div class="lg:w-2/5 w-1/2 whitespace-nowrap">
-                        <!--========-->
-                        <div>
-                            <img height="100%" width="100%" class=" h-auto w-full" src="images/home/4.jpg" alt="//">
-                        </div>
-                        <!--========-->
-                        <div>
-                            <!--========-->
-                            <h1 class="font-Kantumruy-pro xl:text-5xl text-4xl my-2 mt-4">Clever Wellness Days</h1>
-                            <!--========-->
-                            <div class="flex items-center space-x-4 font-pt-sans-narrow  md:text-4xl text-3xl tracking-wider">
-                                <!--========-->
-                                <a class=" text-stone-450" href="#">Buchen</a>
-                                <span>|</span>
-                                <!--========-->
-                                <a href="#">Mehr Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!--========-->
-                    <div class="lg:w-2/5 w-1/2 whitespace-nowrap">
-                        <!--========-->
-                        <div>
-                            <img height="100%" width="100%" class=" h-auto w-full" src="images/home/5.jpg" alt="//">
-                        </div>
-                        <!--========-->
-                        <div>
-                            <!--========-->
-                            <h1 class="font-Kantumruy-pro xl:text-5xl text-4xl my-2 mt-4">Clever Golf Days</h1>
-                            <!--========-->
-                            <div class="flex items-center space-x-4 font-pt-sans-narrow  md:text-4xl text-3xl tracking-wider">
-                                <!--========-->
-                                <a class=" text-stone-450" href="#">Buchen</a>
-                                <span>|</span>
-                                <!--========-->
-                                <a href="#">Mehr Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!--========-->
-                    <a class=" flex flex-col justify-center absolute -right-40 bottom-52" href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" class=" h-20 w-20" viewBox="0 0 82.414 65.05">
-                            <path id="Path_49" data-name="Path 49" d="M51.889,5,83,36.111m0,0L51.889,67.222M83,36.111H3"
-                                transform="translate(-2 -3.586)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" />
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 50.174 29.753">
+                            <path id="Path_175" data-name="Path 175"
+                                d="M48.174,0l-14,12.281L24.1.82,14,12.281,0,0V26.547H48.174Z"
+                                transform="translate(1 2.207)" fill="none" stroke="#bfb8a5" stroke-width="2" />
                         </svg>
-                    </a>
+                        <!--========-->
+                        <h1 class="font-Kantumruy-pro xl:text-5xl text-4xl my-4">Und Action bitte!</h1>
+                        <!--========-->
+                        <p class=" text-2xl xl:text-3xl">Aktivitäten und Erlebnisse im Allgäu</p>
+                    </div>
+                    <!--========-->
+                    <div class=" lg:mt-20 mt-6">
+                        <!--========-->
+                        <p
+                            class=" xl:text-4xl md:text-2xl text-xl leading-loose xl:leading-[51px!important] font-light">
+                            Die Gipfel stürmen, den Fahrwind spüren oder ein paar Golfbälle versenken. Das Ludwig Royal
+                            in Steibis – Oberstaufen
+                            bietet die perfekte Ausgangslage für euren Aktivurlaub und für zahlreiche Ausflüge.
+                            Unzählige Kilometer an Wanderwegen im Naturpark Nagelfluhkette direkt vor der Haustüre.
+                            Genusstouren oder actionreiche
+                            Down-Hill Routen fürs Fahrrad oder E-Bike. Zwei Golfplätze mit Bergblick für spektakuläre
+                            Drives. Und jede Menge
+                            Ausflugsmöglichkeiten für Kulturfans,</p>
+                        <!--========-->
+                        <p class=" xl:text-4xl md:text-2xl text-xl mt-6">Das Allgäu entdecken</p>
+                    </div>
                 </div>
-            </section>
-            <!-- ==========section 004========== -->
-            <section>
                 <!--========-->
-                <div class=" container mx-auto px-5 xl:px-20 grid grid-cols-2 text-black xl:gap-20 md:gap-10 gap-5 font-pt-sans-narrow  pt-20 relative z-10">
+                <div class="lg:order-2 order-1">
+                    <img height="100%" width="100%" class=" h-full w-full object-cover object-center"
+                        src="images/home/2.jpg" alt="//">
+                </div>
+            </div>
+        </section>
+        <!-- ==========section 003========== -->
+        <section>
+            <!--========-->
+            <div
+                class=" container max-w-7xl sm:px-10 mx-auto px-5 xl:px-0 font-pt-sans-narrow pt-16 flex flex-col items-center text-center">
+                <!--========-->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 " viewBox="0 0 50.174 29.753">
+                    <path id="Path_175" data-name="Path 175"
+                        d="M48.174,0l-14,12.281L24.1.82,14,12.281,0,0V26.547H48.174Z" transform="translate(1 2.207)"
+                        fill="none" stroke="#bfb8a5" stroke-width="2" />
+                </svg>
+                <!--========-->
+                <h1 class="font-Kantumruy-pro xl:text-5xl text-4xl my-4">Angebote & Urlaubspakete im Ludwig Royal</h1>
+                <!--========-->
+                <p class=" text-2xl xl:text-3xl">Mehr Genuss, Action, Wellness oder Romantik</p>
+            </div>
+            <!--========-->
+            <div class=" container max-w-7xl sm:px-10 mx-auto px-5 xl:px-0 font-pt-sans-narrow py-16 relative ">
+                <!-- Swiper -->
+                <div id="mySwiper1" class="swiper">
                     <!--========-->
-                    <div>
-                        <img height="100%" width="100%" class=" h-auto w-auto mx-auto object-cover object-center" src="images/home/11.png" alt="//">
+                    <div class="swiper-wrapper">
+                        <!--========-->
+                        <div class="swiper-slide whitespace-nowrap">
+                            <!--========-->
+                            <div>
+                                <img height="100%" width="100%" class=" h-auto w-full" src="images/home/3.jpg" alt="//">
+                            </div>
+                            <!--========-->
+                            <div>
+                                <!--========-->
+                                <h1 class="font-Kantumruy-pro xl:text-5xl text-4xl my-2 mt-4">Zeit zu zweit</h1>
+                                <!--========-->
+                                <div class="flex items-center space-x-4 font-pt-sans-narrow  md:text-4xl text-3xl tracking-wider">
+                                    <!--========-->
+                                    <a class=" text-stone-450" href="#">Buchen</a>
+                                    <span>|</span>
+                                    <!--========-->
+                                    <a href="#">Mehr Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--========-->
+                        <div class="swiper-slide whitespace-nowrap">
+                            <!--========-->
+                            <div>
+                                <img height="100%" width="100%" class=" h-auto w-full" src="images/home/4.jpg" alt="//">
+                            </div>
+                            <!--========-->
+                            <div>
+                                <!--========-->
+                                <h1 class="font-Kantumruy-pro xl:text-5xl text-4xl my-2 mt-4">Clever Wellness Days</h1>
+                                <!--========-->
+                                <div class="flex items-center space-x-4 font-pt-sans-narrow  md:text-4xl text-3xl tracking-wider">
+                                    <!--========-->
+                                    <a class=" text-stone-450" href="#">Buchen</a>
+                                    <span>|</span>
+                                    <!--========-->
+                                    <a href="#">Mehr Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--========-->
+                        <div class="swiper-slide whitespace-nowrap">
+                            <!--========-->
+                            <div>
+                                <img height="100%" width="100%" class=" h-auto w-full" src="images/home/5.jpg" alt="//">
+                            </div>
+                            <!--========-->
+                            <div>
+                                <!--========-->
+                                <h1 class="font-Kantumruy-pro xl:text-5xl text-4xl my-2 mt-4">Clever Golf Days</h1>
+                                <!--========-->
+                                <div class="flex items-center space-x-4 font-pt-sans-narrow  md:text-4xl text-3xl tracking-wider">
+                                    <!--========-->
+                                    <a class=" text-stone-450" href="#">Buchen</a>
+                                    <span>|</span>
+                                    <!--========-->
+                                    <a href="#">Mehr Details</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    
+                </div>
+                <!-- Swiper arrows-->
+                <div>
                     <!--========-->
-                    <div>
-                        <img height="100%" width="100%" class="md:min-h-[667px] min-h-[300px] h-auto w-auto mx-auto object-cover object-center" src="images/home/6.jpg" alt="//">
-                    </div>
+                    <div class="swiper-button-next 2xl:-right-20 xl:right-5 sm:right-16 right-8 2xl:text-black text-white top-0 bottom-20 my-auto"></div>
+                    <!--========-->
+                    <div class="swiper-button-prev 2xl:-left-20 xl:left-5 sm:left-16 left-8 2xl:text-black text-white top-0 bottom-20 my-auto"></div>
+                </div>
+            </div>
+        </section>
+        <!-- ==========section 004========== -->
+        <section>
+            <!--========-->
+            <div
+                class="container max-w-7xl sm:px-10 mx-auto px-5 xl:px-20 grid grid-cols-2 text-black xl:gap-20 md:gap-10 gap-5 font-pt-sans-narrow  pt-16 relative z-10">
+                <!--========-->
+                <div>
+                    <img height="100%" width="100%" class=" h-auto w-auto mx-auto object-cover object-center"
+                        src="images/home/11.png" alt="//">
                 </div>
                 <!--========-->
-                <div class="md:-mt-72 -mt-20 container mx-auto px-5 md:pt-44 pt-20 pb-5 xl:px-40 lg:px-20 sm:px-10 bg-stone-150 font-pt-sans-narrow relative">
+                <div>
+                    <img height="100%" width="100%"
+                        class="md:min-h-[667px] min-h-[300px] h-auto w-auto mx-auto object-cover object-center"
+                        src="images/home/6.jpg" alt="//">
+                </div>
+            </div>
+            <!--========-->
+            <div
+                class="md:-mt-72 -mt-20 container max-w-7xl sm:px-10 mx-auto px-5 md:pt-44 pt-20 pb-5 xl:px-40 lg:px-20 bg-stone-150 font-pt-sans-narrow relative">
+                <!--========-->
+                <div>
                     <!--========-->
-                    <div>
-                        <!--========-->
-                        <h1 class="font-Kantumruy-pro xl:text-5xl text-4xl my-2">Entspannte Auszeit</h1>
-                        <!--========-->
-                        <p class=" text-2xl xl:text-3xl">Ludwig meets Buddha</p>
-                    </div>
+                    <h1 class="font-Kantumruy-pro xl:text-5xl text-4xl my-2">Entspannte Auszeit</h1>
                     <!--========-->
-                    <div class=" md:my-20 my-6 lg:px-20 sm:px-10 px-0">
-                        <!--========-->
-                        <p class=" xl:text-4xl md:text-2xl text-xl leading-loose xl:leading-[51px!important] font-light">Entschleunigen, Kraft tanken und innere Ruhe finden. In unserem Wellness-Bereich kommt ihr in puncto Entspannung ganz
-                        auf eure Kosten. In der einladenden Saunalandschaft ins Schwitzen kommen. Bei einer Massage von Wellness-Experten
+                    <p class=" text-2xl xl:text-3xl">Ludwig meets Buddha</p>
+                </div>
+                <!--========-->
+                <div class=" md:my-16 my-6 lg:px-20 sm:px-10 px-0">
+                    <!--========-->
+                    <p class=" xl:text-4xl md:text-2xl text-xl leading-loose xl:leading-[51px!important] font-light">
+                        Entschleunigen, Kraft tanken und innere Ruhe finden. In unserem Wellness-Bereich kommt ihr in
+                        puncto Entspannung ganz
+                        auf eure Kosten. In der einladenden Saunalandschaft ins Schwitzen kommen. Bei einer Massage von
+                        Wellness-Experten
                         verwöhnen lassen. Im Whirlpool relaxen. Ob verträumt romantisch wie einst</p>
-                        <!--========-->
-                        <p class=" xl:text-4xl md:text-2xl text-xl mt-8 ">Wellnessangebot</p>
-                    </div>
                     <!--========-->
-                    <a class="absolute top-0 bottom-0 my-auto 2xl:-left-32 -left-20 flex flex-col justify-center" href="#">
+                    <p class=" xl:text-4xl md:text-2xl text-xl mt-8 ">Wellnessangebot</p>
+                </div>
+                <!--========-->
+                <a class="absolute xl:top-0 md:top-10 top-0 bottom-0 my-auto 2xl:-left-32 xl:left-3 flex flex-col xl:justify-center justify-start hover:underline" href="#">
+                    <!--========-->
+                    <svg xmlns="http://www.w3.org/2000/svg" class=" text-black h-auto xl:w-12 w-8 mb-3 mx-auto"
+                        viewBox="0 0 47 47">
+                        <path id="Path_19" data-name="Path 19"
+                            d="M4,37.75v2.813A8.437,8.437,0,0,0,12.438,49H40.563A8.437,8.437,0,0,0,49,40.563V37.75M37.75,26.5,26.5,37.75m0,0L15.25,26.5M26.5,37.75V4"
+                            transform="translate(-3 -3)" fill="none" stroke="#000" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2" />
+                    </svg>
+                    <!--========-->
+                    <p class=" xl:text-xl text-sm">Wellness-<br> broschüre</p>
+                </a>
+            </div>
+        </section>
+        <!-- ==========section 005========== -->
+        <section>
+            <!--========-->
+            <div
+                class=" container max-w-7xl sm:px-10 mx-auto px-5 xl:px-0 grid lg:grid-cols-5 grid-cols-1 text-black xl:gap-20 md:gap-10 gap-12 font-pt-sans-narrow pt-16">
+                <!--========-->
+                <div class=" lg:col-span-2">
+                    <img height="100%" width="100%" class=" h-full w-full object-cover object-center"
+                        src="images/home/8.jpg" alt="//">
+                </div>
+                <!--========-->
+                <div class=" lg:col-span-3 font-pt-sans-narrow lg:py-16">
+                    <!--========-->
+                    <div>
                         <!--========-->
-                        <svg xmlns="http://www.w3.org/2000/svg" class=" text-black h-12 w-12 mb-4 mx-auto" viewBox="0 0 47 47">
-                            <path id="Path_19" data-name="Path 19"
-                                d="M4,37.75v2.813A8.437,8.437,0,0,0,12.438,49H40.563A8.437,8.437,0,0,0,49,40.563V37.75M37.75,26.5,26.5,37.75m0,0L15.25,26.5M26.5,37.75V4"
-                                transform="translate(-3 -3)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" />
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 50.174 29.753">
+                            <path id="Path_175" data-name="Path 175"
+                                d="M48.174,0l-14,12.281L24.1.82,14,12.281,0,0V26.547H48.174Z"
+                                transform="translate(1 2.207)" fill="none" stroke="#bfb8a5" stroke-width="2" />
                         </svg>
                         <!--========-->
-                        <p class=" text-xl">Wellness-<br> broschüre</p>
+                        <h1 class="font-Kantumruy-pro xl:text-5xl text-4xl my-2">Guats Nächtle</h1>
+                        <!--========-->
+                        <p class=" text-2xl xl:text-3xl">Euer Urlaubszuhause im Ludwig Royal</p>
+                    </div>
+                    <!--========-->
+                    <div class=" lg:mt-16 mt-6">
+                        <!--========-->
+                        <p
+                            class=" xl:text-4xl md:text-2xl text-xl leading-loose xl:leading-[51px!important] font-light">
+                            Von urgemütlich bis außergewöhnlich – in unseren großzügigen Zimmern könnt ihr euch
+                            wohlfühlen. Der lässige Mix aus
+                            Tradition und Moderne spiegelt sich in all unseren Zimmern wider. Doppelzimmer oder
+                            Luxussuite. Hochgrat Blick oder
+                            gemütlicher Balkon. Für welches Zuhause im Ludwig Royal ihr euch auch entscheidet, bei uns
+                            findet ihr euren persönlichen</p>
+                        <!--========-->
+                        <p class=" xl:text-4xl md:text-2xl text-xl mt-4">Zu den Zimmern</p>
+                    </div>
+                </div>
+            </div>
+            <!--========-->
+            <div
+                class=" container max-w-7xl sm:px-10 mx-auto px-5 xl:px-0 grid lg:grid-cols-5 grid-cols-1 text-black xl:gap-20 md:gap-10 gap-12 font-pt-sans-narro py-16">
+                <!--========-->
+                <div class="lg:order-1 order-2 lg:col-span-3 font-pt-sans-narrow lg:py-16">
+                    <!--========-->
+                    <div>
+                        <!--========-->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 50.174 29.753">
+                            <path id="Path_175" data-name="Path 175"
+                                d="M48.174,0l-14,12.281L24.1.82,14,12.281,0,0V26.547H48.174Z"
+                                transform="translate(1 2.207)" fill="none" stroke="#bfb8a5" stroke-width="2" />
+                        </svg>
+                        <!--========-->
+                        <h1 class="font-Kantumruy-pro xl:text-5xl text-4xl my-2">Coolinary</h1>
+                        <!--========-->
+                        <p class=" text-2xl xl:text-3xl">Genuss für alle Sinne</p>
+                    </div>
+                    <!--========-->
+                    <div class=" lg:mt-16 mt-6">
+                        <!--========-->
+                        <p
+                            class=" xl:text-4xl md:text-2xl text-xl leading-loose xl:leading-[51px!important] font-light">
+                            Regional mit Blick über den Tellerrand. Bei uns trifft die traditionelle Allgäuer Küche auf
+                            Schmankerl aus aller Welt.
+                            Alpine Bodenständigkeit. Gewürzt mit einer Prise Kreativität. Speisen, die so bunt und
+                            farbenfroh sind, wie das Allgäu
+                            selbst. Startet den Tag mit einem reichhaltigen Schlemmerfrühstück. Stärkt euch für weitere
+                            Alpenabenteuer mit unserer
+                            Nachmittags-Jause. Und lasst euch Abends</p>
+                        <!--========-->
+                        <p class=" xl:text-4xl md:text-2xl text-xl mt-6">Unsere Restaurant</p>
+                    </div>
+                </div>
+                <!--========-->
+                <div class="lg:order-2 order-1 lg:col-span-2">
+                    <img height="100%" width="100%" class=" h-full w-full object-cover object-center"
+                        src="images/home/7.jpg" alt="//">
+                </div>
+            </div>
+            <!--========-->
+            <div
+                class=" container max-w-7xl sm:px-10 mx-auto px-5 md:px-0 md:py-16 py-10 sm:gap-20 gap-10 flex items-center justify-center">
+                <!--========-->
+                <div>
+                    <img height="100%" width="100%" class=" h-auto w-auto object-cover object-center"
+                        src="images/home/9.jpg" alt="//">
+                </div>
+                <!--========-->
+                <div>
+                    <img height="100%" width="100%" class=" h-auto w-auto object-cover object-center"
+                        src="images/home/10.png" alt="//">
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--====================footer====================-->
+    <footer>
+        <!--========-->
+        <div class="bg-stone-550 py-16">
+            <!--========-->
+            <div
+                class=" container max-w-7xl sm:px-10 mx-auto px-5 xl:px-0 grid lg:grid-cols-3 grid-cols-1 text-white gap-8 font-pt-sans-narrow">
+                <!--========-->
+                <div class=" lg:order-1 order-2">
+                    <!--========-->
+                    <h1 class=" xl:text-4xl md:text-3xl text-2xl 2xl:whitespace-nowrap">Abonnieren Sie unseren
+                        Newsletter</h1>
+                    <!--========-->
+                    <button class=" p-3 xl:text-2xl md:text-xl text-lg border border-white lg:mt-5 mt-2">Zum Newsletter
+                        anmelden</button>
+                </div>
+                <!--========-->
+                <div class=" lg:order-2 order-1">
+                    <!--========-->
+                    <a href="/">
+                        <!--========-->
+                        <img height="100%" width="100%" class="mx-auto xl:w-4/6 lg:w-full sm:w-1/2 w-3/4"
+                        src="images/logo/LUDWIG_ROYAL_Logo_schwarz.png" alt="">
+                    </a>
+                    
+                </div>
+                <!--========-->
+                <div class="order-3">
+                    <!--========-->
+                    <ul class=" space-y-2">
+                        <!--========-->
+                        <li class="xl:text-4xl md:text-3xl text-2xl">Kontaktieren Sie uns:</li>
+                        <!--========-->
+                        <li class="xl:text-2xl md:text-xl text-lg">Im Dorf 29, 87534 Oberstaufen-<br>Steibis</li>
+                        <!--========-->
+                        <li class="xl:text-2xl md:text-xl text-lg">
+                            <a href="tel:+4983868910">Telefon:+49 8386 8910</a>
+                        </li>
+                        <!--========-->
+                        <li class="xl:text-2xl md:text-xl text-lg">
+                            <a href="mailto:reservierung@hotel-ludwig-royal.de">E-Mail:
+                                reservierung@hotel-ludwig-royal.de</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--========-->
+        <div class=" container max-w-7xl sm:px-10 mx-auto px-5 xl:px-0 py-5 flex xl:flex-row flex-col gap-4 items-center justify-between">
+            <!--========-->
+            <div
+                class=" xl:space-x-2 space-x-1 md:text-2xl text-xl text-black sm:flex text-center items-center font-pt-sans-narrow">
+                <!--========-->
+                <a class="hover:underline" href="#">KARRIERE</a>
+                <span>|</span>
+                <!--========-->
+                <a class="hover:underline" href="#">PRESSE</a>
+                <span>|</span>
+                <!--========-->
+                <a class="hover:underline" href="#">AGB</a>
+                <span>|</span>
+                <!--========-->
+                <a class="hover:underline" href="#">DATENSCHUTZ</a>
+                <span>|</span>
+                <!--========-->
+                <a class="hover:underline" href="#">IMPRESSUM</a>
+            </div>
+            <!--========-->
+            <div
+                class=" xl:space-x-2 space-x-1 md:text-2xl text-xl text-black sm:flex text-center items-center font-pt-sans-narrow">
+                <!--========-->
+                <a class="hover:underline" href="#">ANFAHRT</a>
+                <span>|</span>
+                <!--========-->
+                <a href="#">FOLGEN SIE UN</a>
+                <!--====social====-->
+                <div
+                    class="xl:space-x-3 space-x-2 text-stone-600 flex items-center justify-center mb-1 pl-3 pt-4 sm:pt-0">
+                    <!--========-->
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class=" md:h-6 md:w-6 h-5 w-5" fill="currentColor"
+                            viewBox="0 0 320 512">
+                            <path
+                                d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" />
+                        </svg>
+                    </a>
+                    <!--========-->
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class=" md:h-6 md:w-6 h-5 w-5" fill="currentColor"
+                            viewBox="0 0 448 512">
+                            <path
+                                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                        </svg>
+                    </a>
+                    <!--========-->
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class=" md:h-6 md:w-6 h-5 w-5" fill="currentColor"
+                            viewBox="0 0 576 512">
+                            <path
+                                d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" />
+                        </svg>
                     </a>
                 </div>
-            </section>
-            <!-- ==========section 005========== -->
-            <section>
-                <!--========-->
-                <div class=" container mx-auto px-5 md:px-0 grid lg:grid-cols-5 grid-cols-1 text-black xl:gap-20 md:gap-10 gap-12 font-pt-sans-narrow md:pt-40 pt-20">
-                    <!--========-->
-                    <div class=" lg:col-span-2">
-                        <img height="100%" width="100%" class=" h-full w-full object-cover object-center" src="images/home/8.jpg" alt="//">
-                    </div>
-                    <!--========-->
-                    <div class=" lg:col-span-3 font-pt-sans-narrow lg:py-20">
-                        <!--========-->
-                        <div>
-                            <!--========-->
-                            <svg xmlns="http://www.w3.org/2000/svg"  class="w-12 h-12" viewBox="0 0 50.174 29.753">
-                                <path id="Path_175" data-name="Path 175" d="M48.174,0l-14,12.281L24.1.82,14,12.281,0,0V26.547H48.174Z"
-                                    transform="translate(1 2.207)" fill="none" stroke="#bfb8a5" stroke-width="2" />
-                            </svg>
-                            <!--========-->
-                            <h1 class="font-Kantumruy-pro xl:text-5xl text-4xl my-2">Guats Nächtle</h1>
-                            <!--========-->
-                            <p class=" text-2xl xl:text-3xl">Euer Urlaubszuhause im Ludwig Royal</p>
-                        </div>
-                        <!--========-->
-                        <div class=" lg:mt-20 mt-6">
-                            <!--========-->
-                            <p class=" xl:text-4xl md:text-2xl text-xl leading-loose xl:leading-[51px!important] font-light">Von urgemütlich bis außergewöhnlich – in unseren großzügigen Zimmern könnt ihr euch wohlfühlen. Der lässige Mix aus
-                            Tradition und Moderne spiegelt sich in all unseren Zimmern wider. Doppelzimmer oder Luxussuite. Hochgrat Blick oder
-                            gemütlicher Balkon. Für welches Zuhause im Ludwig Royal ihr euch auch entscheidet, bei uns findet ihr euren persönlichen</p>
-                            <!--========-->
-                            <p class=" xl:text-4xl md:text-2xl text-xl mt-4">Zu den Zimmern</p>
-                        </div>
-                    </div>
-                </div>
-                <!--========-->
-                <div class=" container mx-auto px-5 md:px-0 grid lg:grid-cols-5 grid-cols-1 text-black xl:gap-20 md:gap-10 gap-12 font-pt-sans-narrow md:py-40 py-20">
-                    <!--========-->
-                    <div class="lg:order-1 order-2 lg:col-span-3 font-pt-sans-narrow lg:py-20">
-                        <!--========-->
-                        <div>
-                            <!--========-->
-                            <svg xmlns="http://www.w3.org/2000/svg"  class="w-12 h-12" viewBox="0 0 50.174 29.753">
-                                <path id="Path_175" data-name="Path 175" d="M48.174,0l-14,12.281L24.1.82,14,12.281,0,0V26.547H48.174Z"
-                                    transform="translate(1 2.207)" fill="none" stroke="#bfb8a5" stroke-width="2" />
-                            </svg>
-                            <!--========-->
-                            <h1 class="font-Kantumruy-pro xl:text-5xl text-4xl my-2">Coolinary</h1>
-                            <!--========-->
-                            <p class=" text-2xl xl:text-3xl">Genuss für alle Sinne</p>
-                        </div>
-                        <!--========-->
-                        <div class=" lg:mt-20 mt-6">
-                            <!--========-->
-                            <p class=" xl:text-4xl md:text-2xl text-xl leading-loose xl:leading-[51px!important] font-light">Regional mit Blick über den Tellerrand. Bei uns trifft die traditionelle Allgäuer Küche auf Schmankerl aus aller Welt.
-                            Alpine Bodenständigkeit. Gewürzt mit einer Prise Kreativität. Speisen, die so bunt und farbenfroh sind, wie das Allgäu
-                            selbst. Startet den Tag mit einem reichhaltigen Schlemmerfrühstück. Stärkt euch für weitere Alpenabenteuer mit unserer
-                            Nachmittags-Jause. Und lasst euch Abends</p>
-                            <!--========-->
-                            <p class=" xl:text-4xl md:text-2xl text-xl mt-6">Unsere Restaurant</p>
-                        </div>
-                    </div>
-                    <!--========-->
-                    <div class="lg:order-2 order-1 lg:col-span-2">
-                        <img height="100%" width="100%" class=" h-full w-full object-cover object-center" src="images/home/7.jpg" alt="//">
-                    </div>
-                </div>
-                <!--========-->
-                <div class=" container mx-auto px-5 md:px-0 md:py-20 py-10 sm:gap-20 gap-10 flex items-center justify-center">
-                    <!--========-->
-                    <div>
-                        <img height="100%" width="100%" class=" h-auto w-auto object-cover object-center" src="images/home/9.jpg" alt="//">
-                    </div>
-                    <!--========-->
-                    <div>
-                        <img height="100%" width="100%" class=" h-auto w-auto object-cover object-center" src="images/home/10.png" alt="//">
-                    </div>
-                </div>
-            </section>
-        </main>
-        <!--====================footer====================-->
-        <footer>
-            <!--========-->
-            <div class="bg-stone-550 py-16">
-                <!--========-->
-                <div class=" container mx-auto px-5 md:px-0 grid lg:grid-cols-3 grid-cols-1 text-white gap-8 font-pt-sans-narrow">
-                    <!--========-->
-                    <div class=" lg:order-1 order-2">
-                        <!--========-->
-                        <h1 class=" xl:text-4xl md:text-3xl text-2xl 2xl:whitespace-nowrap">Abonnieren Sie unseren Newsletter</h1>
-                        <!--========-->
-                        <button class=" p-3 xl:text-2xl md:text-xl text-lg border border-white lg:mt-5 mt-2">Zum Newsletter anmelden</button>
-                    </div>
-                    <!--========-->
-                    <div class=" lg:order-2 order-1">
-                        <!--========-->
-                        <img height="100%" width="100%" class="lg:mx-auto xl:w-4/6 lg:w-full sm:w-1/2 w-3/4" src="images/logo/LUDWIG_ROYAL_Logo_schwarz.png" alt="">
-                    </div>
-                    <!--========-->
-                    <div class="order-3">
-                        <!--========-->
-                        <ul class=" space-y-2">
-                            <!--========-->
-                            <li class="xl:text-4xl md:text-3xl text-2xl">Kontaktieren Sie uns:</li>
-                            <!--========-->
-                            <li class="xl:text-2xl md:text-xl text-lg">Im Dorf 29, 87534 Oberstaufen-<br>Steibis</li>
-                            <!--========-->
-                            <li class="xl:text-2xl md:text-xl text-lg">
-                                <a href="tel:+4983868910">Telefon:+49 8386 8910</a>
-                            </li>
-                            <!--========-->
-                            <li class="xl:text-2xl md:text-xl text-lg">
-                                <a href="mailto:reservierung@hotel-ludwig-royal.de">E-Mail: reservierung@hotel-ludwig-royal.de</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
             </div>
-            <!--========-->
-            <div class=" container mx-auto px-5 md:px-0 py-5 flex xl:flex-row flex-col gap-4 items-center justify-between">
-                <!--========-->
-                <div class=" xl:space-x-2 space-x-1 md:text-2xl text-xl text-black sm:flex text-center items-center font-pt-sans-narrow">
-                    <!--========-->
-                    <a href="#">KARRIERE</a>
-                    <span>|</span>
-                    <!--========-->
-                    <a href="#">PRESSE</a>
-                    <span>|</span>
-                    <!--========-->
-                    <a href="#">AGB</a>
-                    <span>|</span>
-                    <!--========-->
-                    <a href="#">DATENSCHUTZ</a>
-                    <span>|</span>
-                    <!--========-->
-                    <a href="#">IMPRESSUM</a>
-                </div>
-                <!--========-->
-                <div class=" xl:space-x-2 space-x-1 md:text-2xl text-xl text-black sm:flex text-center items-center font-pt-sans-narrow">
-                    <!--========-->
-                    <a href="#">ANFAHRT</a>
-                    <span>|</span>
-                    <!--========-->
-                    <a href="#">FOLGEN SIE UN</a>
-                    <!--====social====-->
-                    <div class="xl:space-x-3 space-x-2 text-stone-600 flex items-center justify-center mb-1 pl-3 pt-4 sm:pt-0">
-                        <!--========-->
-                        <a href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" class=" md:h-6 md:w-6 h-5 w-5" fill="currentColor" viewBox="0 0 320 512">
-                                <path
-                                    d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" />
-                            </svg>
-                        </a>
-                        <!--========-->
-                        <a href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" class=" md:h-6 md:w-6 h-5 w-5" fill="currentColor" viewBox="0 0 448 512">
-                                <path
-                                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
-                            </svg>
-                        </a>
-                        <!--========-->
-                        <a href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" class=" md:h-6 md:w-6 h-5 w-5" fill="currentColor" viewBox="0 0 576 512">
-                                <path
-                                    d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        
-        <!---->
-        <script src="//unpkg.com/alpinejs" defer></script>
-    </body>
+        </div>
+    </footer>
+
+    <!---->
+    <script src="js/alpine.min.js" defer></script>
+    <!-----Swiper Js script---->
+    <script src="js/swiper-bundle.min.js"></script>
+    
+    <script>
+        /*-----------------swiper 001----------------------*/
+        var swiper = new Swiper("#mySwiper1", {
+            loop:false,
+            slidesPerView: 2.3,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1.2,
+                },
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 2.3,
+                },
+            },
+        });
+    </script>
+</body>
+
 </html>
