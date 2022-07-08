@@ -39,7 +39,7 @@
         <div
             class="container max-w-7xl sm:px-10 mx-auto px-5 xl:px-0 flex items-center justify-between font-pt-sans-narrow gap-10 relative">
             <!--====left====-->
-            <div @click.away="humberger=false" x-data="{humberger: false}">
+            <div class="sm:min-w-[129px]" @click.away="humberger=false" x-data="{humberger: false}">
                 <!--========-->
                 <a @click.prevent="humberger=!humberger" aria-label="Mobile Menu button" href="#">
                     <!--========-->
@@ -63,7 +63,7 @@
                     </div>
                     
                     <!--========-->
-                    <p class=" xl:text-2xl text-lg leading-none text-center -mt-2">Menü</p>
+                    <p class=" xl:text-2xl text-lg leading-none -mt-2">Menü</p>
                 </a>
                 <!--====Mobile menu====-->
                 <div :class="{'translate-x-0' : humberger, 'translate-x-full': !humberger  }"
@@ -114,7 +114,7 @@
                     class="outline-none text-white md:p-4 md:px-5 p-3 tracking-wider bg-stone-550 hover:bg-transparent border-2 border-stone-550 hover:border-stone-550 hover:text-black duration-200 xl:text-3xl md:text-2xl sm:text-xl text-base">Buchen</button>
             </div>
             <!--====DE button====-->
-            <div class=" absolute -top-10 2xl:-left-20 xl:left-0 sm:left-10 left-4">
+            <div class=" absolute -top-10 2xl:-left-32 xl:left-0 sm:left-10 left-4">
                 <!--====DE button====-->
                 <a class=" flex items-center space-x-2 text-xl text-black" href="#">
                     <!--====span====-->
@@ -136,7 +136,7 @@
             <!--========-->
             <div class="container max-w-7xl sm:px-10 mx-auto px-5 xl:px-0 py-20 relative text-center">
                 <!--========-->
-                <h1 class="font-Kantumruy-pro xl:text-5xl text-4xl my-4 leading-[67px!important]">Servus und
+                <h1 class="font-Kantumruy-pro xl:text-5xl text-4xl my-4 xl:leading-[67px!important] leading-[44px!important]">Servus und
                     hereinspaziert<br class=" hidden md:block">
                     ins Allgäu-Hotel Ludwig Royal</h1>
                 <!--========-->
@@ -149,7 +149,7 @@
                     <div class=" h-0.5 w-32 bg-black mx-auto block mt-1 group-hover:bg-stone-450"></div>
                 </a>
                 <!--========-->
-                <div class="bg-stone-150 -mt-1 absolute top-full z-20 p-12 2xl:-left-36 left-0 flex flex-col md:justify-center justify-start gap-20">
+                <div class="bg-stone-150 -mt-1 absolute top-full z-20 p-12 2xl:-left-44 left-0 flex flex-col md:justify-center justify-start gap-20">
                     <!--========-->
                     <a class="hover:underline" href="#">
                         <!--========-->
@@ -181,11 +181,11 @@
                 <!--========-->
                 <div>
                     <!--========-->
-                    <img class="absolute h-full w-full min-h-726 object-fill z-10" src="images/home/1.jpg" alt="//">
+                    <img class="absolute h-full w-full min-h-726 object-cover z-10 left-0 right-0 mx-auto 3xl:max-w-[1631px]" src="images/home/1.jpg" alt="//">
                     <!--========-->
-                    <div class="xl:block hidden h-[341px] bg-stone-150 z-10 absolute -top-1 left-0 w-[9.5%] 3xl:w-1/4"> </div>
+                    <div class="3xl:hidden xl:block hidden h-[341px] bg-stone-150 z-10 absolute -top-1 left-0 w-[8%] 3xl:w-1/4"> </div>
                     <!--========-->
-                    <div class="2xl:block hidden bg-stone-150 z-10 absolute top-0 bottom-0 right-0 w-[9.5%] 3xl:w-1/5"> </div>
+                    <div class="hidden bg-stone-150 z-10 absolute top-0 bottom-0 right-0 w-[9.5%] 3xl:w-1/5"> </div>
                 </div>
                 <!--========-->
                 <div class="relative h-full container max-w-7xl sm:px-10 mx-auto px-5 xl:px-0 z-20">
@@ -270,30 +270,30 @@
         <!-- ==========section 002========== -->
         <section>
             <!--========-->
-            <div class=" container max-w-7xl sm:px-10 mx-auto px-5 xl:px-0 py-16 pt-28 relative">
+            <div class=" container max-w-7xl sm:px-10 mx-auto px-5 xl:px-0 py-16 relative">
                 <!--========-->
                 <div class="xl:w-3/5 md:w-4/5 mx-auto md:space-y-10 space-y-6">
                     <!--========-->
-                    <p class=" xl:text-4xl md:text-3xl text-2xl font-semibold font-pt-sans-narrow md:pb-16">Beste Lage
+                    <p class=" xl:text-4xl md:text-3xl text-2xl font-semibold font-pt-sans-narrow md:pb-16 lg:leading-[51px!important]">Beste Lage
                         in der Urlaubsregion Oberstaufen-Steibis! Hochgrat, Imberg und die einzigartige Natur des
                         Westallgäus direkt
                         vor der Haustüre. Zwei fantastische Golfplätze um die Ecke. Großzügige Zimmer und die neue
                         Adults-Only Wellness-Oase
                         „Ludwig meets Buddha “. – Das Leading Spa</p>
                     <!--========-->
-                    <p class=" xl:text-4xl md:text-3xl text-2xl font-pt-sans-narrow">Wellness, Wandern, Golfen, Biken
+                    <p class=" xl:text-4xl md:text-3xl text-2xl font-pt-sans-narrow lg:leading-[51px!important]">Wellness, Wandern, Golfen, Biken
                         und das Allgäu genießen! Heute ein Ausflug nach Schloss Neuschwanstein, morgen zum
                         Outletshopping. Sich im neuen Wellnessbereich verwöhnen lassen und beim abwechslungsreichen
                         Abendessen echten Allgäuer
                         Gaumenschmaus genießen!</p>
                     <!--========-->
-                    <p class=" xl:text-4xl md:text-3xl text-2xl font-pt-sans-narrow">Eure Auszeit mit besonderen
+                    <p class=" xl:text-4xl md:text-3xl text-2xl font-pt-sans-narrow lg:leading-[51px!important]">Eure Auszeit mit besonderen
                         Wohlfühl-Momenten und Abenteuern startet genau hier! Urgemütlich, ohne Schischi und
                         übertriebenen Glamour. Einzigartig, außergewöhnlich und irgendwie anders. Das ist Urlaub im
                         Ludwig Royal!</p>
                 </div>
                 <!--========-->
-                <a class="absolute xl:top-0 md:top-10 top-4 bottom-0 my-auto 2xl:-left-32 xl:left-3  flex flex-col md:justify-center justify-start hover:underline" href="#">
+                <a class="hidden absolute xl:top-0 md:top-10 top-4 bottom-0 my-auto 2xl:-left-36 xl:left-3  md:flex flex-col md:justify-center justify-start hover:underline" href="#">
                     <!--========-->
                     <svg xmlns="http://www.w3.org/2000/svg" class="  text-black h-auto xl:w-12 w-8 mb-3 mx-auto"
                         viewBox="0 0 52 59.768">
@@ -313,7 +313,7 @@
                 </a>
             </div>
             <!--========-->
-            <div class=" container max-w-7xl sm:px-10 mx-auto px-5 grid lg:grid-cols-2 grid-cols-1 text-black xl:gap-20 md:gap-10 gap-12 font-pt-sans-narrow pb-16">
+            <div class=" container max-w-7xl sm:px-10 mx-auto px-5 xl:px-0 grid lg:grid-cols-2 grid-cols-1 text-black xl:gap-20 md:gap-10 gap-12 font-pt-sans-narrow pb-16">
                 <!--========-->
                 <div class="lg:order-1 order-2 font-pt-sans-narrow">
                     <!--========-->
@@ -376,7 +376,7 @@
                     <!--========-->
                     <div class="swiper-wrapper">
                         <!--========-->
-                        <div class="swiper-slide whitespace-nowrap">
+                        <div class="swiper-slide xl:whitespace-nowrap">
                             <!--========-->
                             <div>
                                 <img height="100%" width="100%" class=" h-auto w-full" src="images/home/3.jpg" alt="//">
@@ -384,9 +384,9 @@
                             <!--========-->
                             <div>
                                 <!--========-->
-                                <h1 class="font-Kantumruy-pro xl:text-5xl text-4xl my-2 mt-4">Zeit zu zweit</h1>
+                                <h1 class="font-Kantumruy-pro xl:text-5xl md:text-4xl text-3xl my-2 mt-4">Zeit zu zweit</h1>
                                 <!--========-->
-                                <div class="flex items-center space-x-4 font-pt-sans-narrow  md:text-4xl text-3xl tracking-wider">
+                                <div class="flex items-center space-x-4 font-pt-sans-narrow  xl::text-4xl md:text-3xl text-2xl  tracking-wider">
                                     <!--========-->
                                     <a class=" text-stone-450" href="#">Buchen</a>
                                     <span>|</span>
@@ -396,7 +396,7 @@
                             </div>
                         </div>
                         <!--========-->
-                        <div class="swiper-slide whitespace-nowrap">
+                        <div class="swiper-slide xl:whitespace-nowrap">
                             <!--========-->
                             <div>
                                 <img height="100%" width="100%" class=" h-auto w-full" src="images/home/4.jpg" alt="//">
@@ -404,9 +404,9 @@
                             <!--========-->
                             <div>
                                 <!--========-->
-                                <h1 class="font-Kantumruy-pro xl:text-5xl text-4xl my-2 mt-4">Clever Wellness Days</h1>
+                                <h1 class="font-Kantumruy-pro xl:text-5xl md:text-4xl text-3xl my-2 mt-4">Clever Wellness Days</h1>
                                 <!--========-->
-                                <div class="flex items-center space-x-4 font-pt-sans-narrow  md:text-4xl text-3xl tracking-wider">
+                                <div class="flex items-center space-x-4 font-pt-sans-narrow  xl::text-4xl md:text-3xl text-2xl  tracking-wider">
                                     <!--========-->
                                     <a class=" text-stone-450" href="#">Buchen</a>
                                     <span>|</span>
@@ -416,7 +416,7 @@
                             </div>
                         </div>
                         <!--========-->
-                        <div class="swiper-slide whitespace-nowrap">
+                        <div class="swiper-slide xl:whitespace-nowrap">
                             <!--========-->
                             <div>
                                 <img height="100%" width="100%" class=" h-auto w-full" src="images/home/5.jpg" alt="//">
@@ -424,9 +424,9 @@
                             <!--========-->
                             <div>
                                 <!--========-->
-                                <h1 class="font-Kantumruy-pro xl:text-5xl text-4xl my-2 mt-4">Clever Golf Days</h1>
+                                <h1 class="font-Kantumruy-pro xl:text-5xl md:text-4xl text-3xl my-2 mt-4">Clever Golf Days</h1>
                                 <!--========-->
-                                <div class="flex items-center space-x-4 font-pt-sans-narrow  md:text-4xl text-3xl tracking-wider">
+                                <div class="flex items-center space-x-4 font-pt-sans-narrow  xl::text-4xl md:text-3xl text-2xl  tracking-wider">
                                     <!--========-->
                                     <a class=" text-stone-450" href="#">Buchen</a>
                                     <span>|</span>
@@ -544,7 +544,7 @@
             </div>
             <!--========-->
             <div
-                class=" container max-w-7xl sm:px-10 mx-auto px-5 xl:px-0 grid lg:grid-cols-5 grid-cols-1 text-black xl:gap-20 md:gap-10 gap-12 font-pt-sans-narro py-16">
+                class=" container max-w-7xl sm:px-10 mx-auto px-5 xl:px-0 grid lg:grid-cols-5 grid-cols-1 text-black xl:gap-20 md:gap-10 gap-12 font-pt-sans-narro py-16 relative">
                 <!--========-->
                 <div class="lg:order-1 order-2 lg:col-span-3 font-pt-sans-narrow lg:py-16">
                     <!--========-->
@@ -581,6 +581,19 @@
                     <img height="100%" width="100%" class=" h-full w-full object-cover object-center"
                         src="images/home/7.jpg" alt="//">
                 </div>
+                <!--========-->
+                <a class="absolute xl:top-5 md:top-10 top-0 bottom-0 my-auto 2xl:-left-40 xl:left-3 hidden xl:flex flex-col 2xl:justify-center justify-start hover:underline"
+                    href="#">
+                    <!--========-->
+                    <svg xmlns="http://www.w3.org/2000/svg" class=" text-black h-auto 2xl:w-12 w-8 mb-3 mx-auto" viewBox="0 0 47 47">
+                        <path id="Path_19" data-name="Path 19"
+                            d="M4,37.75v2.813A8.437,8.437,0,0,0,12.438,49H40.563A8.437,8.437,0,0,0,49,40.563V37.75M37.75,26.5,26.5,37.75m0,0L15.25,26.5M26.5,37.75V4"
+                            transform="translate(-3 -3)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" />
+                    </svg>
+                    <!--========-->
+                    <p class=" 2xl:text-xl text-sm text-center">Speise- &<br> Getränkekarte</p>
+                </a>
             </div>
             <!--========-->
             <div
